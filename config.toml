@@ -1,4 +1,4 @@
-baseURL = "http://example.org/"
+baseURL = "https://brave-hugle-eed327.netlify.app/"
 languageCode = "ja"
 title = "バイナリ畑でつかまえて"
 theme = "m10c"
