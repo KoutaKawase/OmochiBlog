@@ -1,0 +1,13 @@
+baseURL = "http://example.org/"
+languageCode = "ja"
+title = "バイナリ畑でつかまえて"
+theme = "m10c"
+paginate = 5
+
+[params]
+    authod = "omochizou"
+    description = " "
+    avatar = "yoshi.png"
+    [[params.social]]
+        name = "twitter"
+        url = "https://twitter.com/omochiozu"
