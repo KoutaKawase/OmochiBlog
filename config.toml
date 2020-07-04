@@ -1,6 +1,6 @@
 baseURL = "https://brave-hugle-eed327.netlify.app/"
 languageCode = "ja"
-title = "バイナリ畑でつかまえて"
+title = "パケット畑でつかまえて"
 theme = "m10c"
 paginate = 5
 
