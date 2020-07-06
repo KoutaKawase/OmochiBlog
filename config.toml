@@ -6,7 +6,7 @@ paginate = 5
 
 [params]
     authod = "omochizou"
-    description = " "
+    description = "TypeScriptとC#と.NET Coreが好き。Linuxデスクトップ好き"
     avatar = "yoshi.png"
     [[params.social]]
         name = "twitter"
