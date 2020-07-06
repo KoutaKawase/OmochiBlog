@@ -10,4 +10,4 @@ paginate = 5
     avatar = "yoshi.png"
     [[params.social]]
         name = "twitter"
-        url = "https://twitter.com/omochiozu"
+        url = "https://twitter.com/omochizou"
