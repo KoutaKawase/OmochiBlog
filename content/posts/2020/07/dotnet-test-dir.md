@@ -1,7 +1,6 @@
 ---
 title: ".NETCore上のC#でテストコードからテストプロジェクトのディレクトリを取得する方法"
 date: 2020-07-07T06:36:20+09:00
-draft: false
 tags: ["Ubuntu", ".NETCore", "C#", "NUnit"]
 ---
 
