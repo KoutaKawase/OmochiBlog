@@ -10,8 +10,7 @@ tags: ["awk", "Git", "シェルスクリプト"]
 <span style="color: red; ">Apache Subversion が必要です。</span>
 
 ```bash
-echo "https://github.com/mattn/go-gtk/tree/master/_example/demo
-" | awk '{gsub("tree/master", "trunk", $1); print $1}' | xargs svn export
+echo "https://github.com/mattn/go-gtk/tree/master/_example/demo" | awk '{gsub("tree/master", "trunk", $1); print $1}' | xargs svn export
 ```
 
 ただこれだと使いにくいのでシェルスクリプト化してみました。
