@@ -17,7 +17,7 @@ client.commands = new Discord.Collection<string, Command>();
 
 こんな感じで後からDiscord.Clientオブジェクトにcommandsというプロパティを勝手に追加してるんですが、もちろんこんなものはdiscord.jsのDiscord.Clientの型定義に含まれていないので、自分で拡張してやる必要があります。
 
-今回はその自分で型を拡張する方法を自分用にまとめておきます。
+今回はその型を自分で拡張する方法を自分用にまとめておきます。
 
 ## 結論
 
@@ -56,7 +56,7 @@ declare module 'discord.js' {
 
 ## 解説
 
-TypeScriptでは実装を定義しない宣言(型のみの宣言)**アンビエント宣言**と呼びます。
+TypeScriptでは実装を定義しない宣言(型のみの宣言)*を*アンビエント宣言**と呼びます。
 
 アンビエント宣言は .d.tsという拡張子を持ったファイルで宣言できます。
 
@@ -66,9 +66,12 @@ C++における .hファイルのようなものです。
 
 ### declare moduleとは
 
-declare module "名前"をアンビエント宣言内で記述することで名前で指定した型定義モジュール内を指定することができます。
+```typescript
+declare module "名前"
+```
+をアンビエント宣言内で記述することで "名前" で指定した型定義モジュールを指定することができます。
 
-今回はdiscord.jsの型を弄りたかったので、discord.jsを指定し、Clientの型を拡張しています。
+今回はdiscord.jsの型を弄りたかったので、declare module名にdiscord.jsを指定し、Clientの型を拡張しています。
 
 ### interfaceのマージ
 
@@ -123,3 +126,7 @@ interface Client {
 としています。discord.jsにすでに定義されているClientの型にマージしています。
 
 これらのようなマージをTypeScriptでは [Declaration Merging](https://www.typescriptlang.org/docs/handbook/declaration-merging.html)と言います。
+
+## お礼
+最後まで読んでくださりありがとうございます。
+わかりにくい文章かもしれませんが、お役に立てたら嬉しいです。
