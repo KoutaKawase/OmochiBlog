@@ -1,7 +1,7 @@
 ---
 title: "TypeScriptのライブラリの型定義を拡張する方法(with Discord.js)"
 date: 2020-08-09T18:22:40+09:00
-draft: true
+draft: false
 tags: ["TypeScript"]
 ---
 
