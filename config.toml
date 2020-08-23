@@ -4,6 +4,21 @@ title = "パケット畑でつかまえて"
 theme = "m10c"
 paginate = 5
 
+pygmentsUseClasses = true
+pygmentsCodeFences = true
+
+[markup]
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = false
+    hl_Lines = ""
+    lineNoStart = 1
+    lineNos = false
+    lineNumbersInTable = true
+    noClasses = true
+    style = "solarized-dark"
+    tabWidth = 4
+
 [params]
     authod = "omochizou"
     description = "ヒロアカと初音ミクが好きな趣味プログラマ"
@@ -11,3 +26,6 @@ paginate = 5
     [[params.social]]
         name = "twitter"
         url = "https://twitter.com/omochizou"
+
+    [params.style]
+        lightColor = "rgba(255, 255, 255, 0.75)"

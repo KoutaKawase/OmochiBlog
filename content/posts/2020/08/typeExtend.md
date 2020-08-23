@@ -14,7 +14,6 @@ import { Command } from './commands/types/Command';
 const client = new Discord.Client();
 client.commands = new Discord.Collection<string, Command>();
 ```
-
 こんな感じで後からDiscord.Clientオブジェクトにcommandsというプロパティを勝手に追加してるんですが、もちろんこんなものはdiscord.jsのDiscord.Clientの型定義に含まれていないので、自分で拡張してやる必要があります。
 
 今回はその型を自分で拡張する方法を自分用にまとめておきます。
