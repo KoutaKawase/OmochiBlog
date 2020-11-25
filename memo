@@ -1,0 +1,65 @@
+flexについて調べる
+
+目標
+
+<div class="container">
+  <div class="block1">block1</div>
+  <div class="block2">block2</div>
+</div>
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+でcenteredされた縦並びが実現できる理由を探していく
+それとjustify-contentとalign-itemsの違いも調べる
+
+flexとは
+正しい用語はCSS Flexible box layout。(https://developer.mozilla.org/ja/docs/Web/CSS/CSS_Flexible_Box_Layout)
+flexible = 	曲げやすい、しなやかな
+CSSのモジュール(機能)の一つ　一次元(横とか縦とか一方向)のアイテムのレイアウトを柔軟に定義できるスグレモノ
+フレックスコンテナー(css flexible box layoutを使う空間)の子は任意の方向に柔軟に動かせる(flexibileたる所以)
+余白を埋めるため伸ばしたり親からあふれる部分を収縮したりflexibleにサイズを操れる。(https://developer.mozilla.org/ja/docs/Web/CSS/CSS_Flexible_Box_Layout)
+
+MDNの例
+<div class="box">
+  <div>One</div>
+  <div>Two</div>
+  <div>Three
+      <br>has
+      <br>extra
+      <br>text
+  </div>
+</div>
+
+.box {
+  display: flex;
+  justify-content: space-between;
+}
+
+この例の通り、flexを使うには最初にフレックスコンテナー部分にdisplay: flex;を設定する。
+すると子はフレックスアイテムとなる。
+justify-contentとはフレックスコンテナーの主軸に沿ってフレックスアイテムの間や周囲に間隔を配置する方法を定義するプロパティ(https://developer.mozilla.org/ja/docs/Web/CSS/justify-content)
+flexboxにおける主軸(Main Axis)とはflex-directionの設定方向を指す。(https://developer.mozilla.org/ja/docs/Glossary/Main_Axis)
+flex-directionとはflexにおける主軸を定義することでフレックスアイテムの配置方法を定義するプロパティ。rowなら横 columnなら縦となる 初期値はrow つまりインライン要素の並ぶ方向(インライン方向)に伸びる軸
+今回のjustify-content: space-between;は主軸(flex-directionは初期値なのでrow)方向にフレックスアイテムを均等に配置し、最初のアイテムは先頭、最後のアイテムは末尾に寄せるという設定(https://developer.mozilla.org/ja/docs/Web/CSS/justify-content)
+align-items flexboxでは交差軸(主軸の反対 rowならcolumn方向)のアイテムの配置を制御する
+align-itemsの初期値は normal だがflexboxにおいてのalign-items: normal;はalign-items: stretch;として機能する(https://developer.mozilla.org/ja/docs/Web/CSS/align-items)
+従ってこの例のフレックスアイテムは交差軸方向(column)にアイテムがストレッチされている事が説明できる。
+
+.container {
+  display: flex;
+  /*
+  主軸が縦になる 交差軸が横になる
+  この場合主軸が縦となったのでフレックスアイテムが縦に積まれていく
+   */
+  flex-direction: column;
+  /*
+  align..は交差軸方向のアイテム配置を決めるプロパティなので
+  centerで交差軸方向にアイテムを交差軸上の中央に配置している
+   */
+  align-items: center;
+}
+
